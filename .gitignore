@@ -1,3 +1,7 @@
+# EJB
+test/decompressed_search.json
+test/recompressed_search.json.mozlz4
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
