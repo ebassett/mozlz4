@@ -68,10 +68,14 @@ if __name__ == "__main__":
         )
     argparser.add_argument(
             "in_file",
+            nargs="?",
+            default=sys.stdin.fileno(),
             help="Path to input file."
         )
     argparser.add_argument(
             "out_file",
+            nargs="?",
+            default=sys.stdout.fileno(),
             help="Path to output file."
         )
 
