@@ -31,6 +31,7 @@
 # OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 import lz4.block  # TODO: Investigate lz4.frame as alternative.
+import pathlib
 import sys
 
 from argparse import ArgumentParser
@@ -81,6 +82,12 @@ if __name__ == "__main__":
 
     parsed_args = argparser.parse_args()
 
+
+    try:
+        if pathlib.PurePath(sys.argv[0]).parts[-1].startswith("un"):
+            parsed_args.decompress = True
+    except:
+        pass
 
     try:
         in_file = open(parsed_args.in_file, "rb")
